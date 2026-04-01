@@ -1,6 +1,6 @@
 # tauri-pty Skill
 
-A Claude skill for building terminal emulators in Tauri 2 + React.
+Agent skill for building terminal emulators in Tauri 2 + React.
 
 ## What's Inside
 
@@ -17,9 +17,40 @@ tauri-pty/
 
 ## Installation
 
-1. Download `tauri-pty.skill`
-2. Go to **Claude.ai → Settings → Skills → Upload Skill**
-3. Done — Claude will use this skill automatically when you're working on a Tauri terminal project
+Each agent has its own directory convention for injecting context. Copy the skill files to the right place for your agent.
+
+### Claude Code
+```
+.claude/skills/tauri-pty/       ← project-level (commit to repo)
+~/.claude/skills/tauri-pty/     ← global (all projects)
+```
+Claude Code auto-discovers skills from these directories. No config needed.
+
+### Claude.ai
+Upload `tauri-pty.skill` via **Settings → Customize → Skills → Upload Skill**.
+
+### Cursor
+```
+.cursor/skills/tauri-pty
+```
+
+### Windsurf (Cascade)
+
+```
+.windsurf/skills/tauri-pty 
+```
+
+### GitHub Copilot / VS Code
+```
+.github/skills/tauri-pty ← always-on repo instructions
+or
+.copilot/skills/tauri-pty                  
+```
+
+### Any Other Agent (common universal approach)
+```
+.agent/skills/tauri-pty                
+```
 
 ## Stack
 
@@ -27,7 +58,3 @@ tauri-pty/
 - **tauri-plugin-pty** or manual **portable_pty**
 - **React** + **TypeScript** frontend
 - **xterm.js** renderer
-
-## License
-
-MIT
